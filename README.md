@@ -1,0 +1,1 @@
+# Minimalistic Awesome WM widgets
