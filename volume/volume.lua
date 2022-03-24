@@ -5,6 +5,7 @@ local beautiful = require("beautiful")
 
 volume = { }
 
+
 volume.initial_value = 25
 volume.value = volume.initial_value
 volume.bar_color = "#3a3a35"
@@ -15,9 +16,21 @@ volume.bar_width = 80
 volume.bar_height = 3
 volume.icon_opacity = 0.7
 
+function volume:init(args)
+    self.initial_value = args.initial_value or volume.initial_value
+    self.bar_color =  args.bar_color or volume.bar_color
+    self.handle_color = args.handle_color or volume.handle_color
+    self.volume_icon_image = args.volume_icon_image or volume.volume_icon_image
+    self.mute_icon_image = args.mute_icon_image or volume.mute_icon_image
+    self.bar_width = args.bar_width or volume.bar_width
+    self.bar_height = args.bar_height or volume.bar_height
+    self.icon_opacity = args.icon_opacity or volume.icon_opacity
+    init_volume()
+end
+
 local last_value = volume.initial_value
 
-volume.volume_icon = wibox.widget {
+volume_icon = wibox.widget {
     image  = volume.volume_icon_image,
     resize = true,
     valign = "center",
@@ -29,7 +42,7 @@ volume.volume_icon = wibox.widget {
     visible = true
 }
 
-volume.volume_bar = wibox.widget {
+volume_bar = wibox.widget {
     bar_shape           = gears.shape.rounded_rect,
     bar_height          = volume.bar_height,
     bar_color           = volume.bar_color,
@@ -49,26 +62,26 @@ local function _set_volume(new_value)
     volume.value = new_value
 
     if new_value <= 0 then
-        volume.volume_icon.image = volume.mute_icon_image
+        volume_icon.image = volume.mute_icon_image
     else
-        volume.volume_icon.image = volume.volume_icon_image
+        volume_icon.image = volume.volume_icon_image
     end
 end
 
 function volume.set_volume(new_value)
-    volume.volume_bar.value = new_value
+    volume_bar.value = new_value
 end
 
-function volume.init_volume()
+function init_volume()
     volume.set_volume(volume.initial_value)
-    _set_volume(volume.volume_bar.value)
+    _set_volume(volume_bar.value)
 end
 
-volume.volume_bar:connect_signal("property::value", function(_, val)
-    _set_volume(volume.volume_bar.value)
+volume_bar:connect_signal("property::value", function(_, val)
+    _set_volume(volume_bar.value)
 end)
 
-volume.volume_icon:connect_signal("button::press", function(_, _, _, _, _)
+volume_icon:connect_signal("button::press", function(_, _, _, _, _)
     if volume.value > 0 then
         volume.set_volume(0)
     else
@@ -77,4 +90,7 @@ volume.volume_icon:connect_signal("button::press", function(_, _, _, _, _)
 end)
 
 
-return volume
+return setmetatable(volume, {
+    __call = volume.init,
+})
+
