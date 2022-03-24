@@ -5,7 +5,6 @@ local beautiful = require("beautiful")
 
 volume = { }
 
-
 volume.initial_value = 25
 volume.value = volume.initial_value
 volume.bar_color = "#3a3a35"
