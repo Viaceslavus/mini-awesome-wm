@@ -6,15 +6,15 @@ local home = os.getenv("HOME")
 
 shutdown_menu = awful.menu({
     items = {
-              {"Logout", function() awesome.quit() end, home.."/.config/awesome/shutdown_menu/icons/point.png"},
-              {"Suspend", "systemctl suspend", home.."/.config/awesome/shutdown_menu/icons/point.png"},
-              {"Restart", "shutdown -r now", home.."/.config/awesome/shutdown_menu/icons/point.png"},
-              {"Shutdown", "shutdown now", home.."/.config/awesome/shutdown_menu/icons/point.png"}
+              {"Logout", function() awesome.quit() end, home.."/.config/awesome/shutdown/icons/point.png"},
+              {"Suspend", "systemctl suspend", home.."/.config/awesome/shutdown/icons/point.png"},
+              {"Restart", "shutdown -r now", home.."/.config/awesome/shutdown/icons/point.png"},
+              {"Shutdown", "shutdown now", home.."/.config/awesome/shutdown/icons/point.png"}
             }
 })
 
 shutdown_icon = wibox.widget {
-    image  = home.."/.config/awesome/shutdown_menu/icons/shutdown.png",
+    image  = home.."/.config/awesome/shutdown/icons/shutdown.png",
     resize = true,
     widget = wibox.widget.imagebox,
     forced_width = 30,

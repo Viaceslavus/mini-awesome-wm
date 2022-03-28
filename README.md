@@ -14,6 +14,7 @@ And as a result I've got something like this:
 Basically there are three custom widgets and they are exposed in a directowies with an appropriate names and theirs own documentation:
 - [Battery Widget](https://github.com/slamko/mini-awesome-wm/tree/master/battery)
 - [Volume Widget](https://github.com/slamko/mini-awesome-wm/tree/master/volume)
+- [Shutdown menu](https://github.com/slamko/mini-awesome-wm/tree/master/shutdown)
 
 Clock and keyboard layout are standart AwesomeWM widgets with ```inconsolata bold 11``` font.
 
