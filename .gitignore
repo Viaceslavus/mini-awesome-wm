@@ -1,3 +1,6 @@
-themes/
+themes/*
+!themes/default
+themes/default/*
+!themes/default/theme.lua
 /icons/
 /screenshot/
