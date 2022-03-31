@@ -184,15 +184,9 @@ awful.screen.connect_for_each_screen(function(s)
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
         style   = {
-            shape = gears.shape.powerline
+            shape = gears.shape.rounded_bar
         },
         layout   = {
-            spacing = -12,
-            spacing_widget = {
-                color  = '#21252b',
-                shape  = gears.shape.powerline,
-                widget = wibox.widget.separator,
-            },
             layout  = wibox.layout.fixed.horizontal
         },
         widget_template = {
@@ -204,7 +198,7 @@ awful.screen.connect_for_each_screen(function(s)
                                 id     = 'index_role',
                                 widget = wibox.widget.textbox,
                             },
-                            margins = 4,
+                            margins = 2,
                             widget  = wibox.container.margin,
                         },
                         widget = wibox.container.background,
@@ -219,8 +213,8 @@ awful.screen.connect_for_each_screen(function(s)
                     },
                     layout = wibox.layout.fixed.horizontal,
                 },
-                left  = 11,
-                right = 11,
+                left  = 6,
+                right = 6,
                 widget = wibox.container.margin
             },
             id     = 'background_role',
