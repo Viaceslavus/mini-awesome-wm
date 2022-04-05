@@ -9,7 +9,8 @@ Actually:
 - I have no popups in my widgets as they require you to make a few more excessive mouse clicks...
 
 And as a result I've got something like this:  
-![2022-03-27_00:16:08](https://user-images.githubusercontent.com/72746829/160260153-abbf873c-b5d5-49a2-a265-860d91b56be3.png)
+![2022-03-31_11:51:30](https://user-images.githubusercontent.com/72746829/161699527-891f84ec-8c01-4857-bd89-b5ed3aeb8775.png)
+
 
 Basically there are three custom widgets and they are exposed in a directowies with an appropriate names and theirs own documentation:
 - [Battery Widget](https://github.com/slamko/mini-awesome-wm/tree/master/battery)
