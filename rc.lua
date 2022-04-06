@@ -17,7 +17,8 @@ local has_fdo, freedesktop = pcall(require, "freedesktop")
 beautiful.init("~/.config/awesome/themes/default/theme.lua")
 
 require("screenshot.screenshot")
-require("shutdown.shutdown")
+local shutdown = require("shutdown.shutdown")
+shutdown {}
 
 local volume = require("volume.volume")
 local battery = require("battery.battery")
