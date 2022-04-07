@@ -23,5 +23,5 @@ The second line without parameters initializes battery percentage.
 - ```battery.icon_opacity```
      + A number between 0 and 1: Icon widget image opacity in any state
 
-Usually there is no need to set ```battery.[volume|mute]_icon_image``` values, 
+Usually there is no need to manually set up ```battery.[volume|mute]_icon_image``` values, 
 as default icons are located inside ```icons``` folder for each widget, so simply replacing them is also gonna work. 

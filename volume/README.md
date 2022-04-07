@@ -31,5 +31,5 @@ The second line without parameters sets the volume to 25 by default.
 - ```volume.icon_opacity```
      + A number between 0 and 1 to adjust volume icon opacity in any state
 
-Usually there is no need to set ```volume.[volume|mute]_icon_image``` values, 
+Usually there is no need to manually set up ```volume.[volume|mute]_icon_image``` values, 
 as default icons are located inside ```icons``` folder for each widget, so simply replacing them is also gonna work. 
