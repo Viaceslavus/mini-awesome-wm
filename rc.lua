@@ -18,7 +18,7 @@ beautiful.init("~/.config/awesome/themes/default/theme.lua")
 local shutdown = require("shutdown.shutdown")
 local volume = require("volume.volume")
 local battery = require("battery.battery")
-local screenshot = require("screenshot.screenshot");
+local screenshot = require("awesomewm-screenshot.screenshot");
 
 local workspaces_count = 5
 local home = os.getenv("HOME")
