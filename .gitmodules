@@ -1,0 +1,3 @@
+[submodule "awesomewm-screenshot"]
+	path = awesomewm-screenshot
+	url = https://github.com/denisoster/awesomewm-screenshot.git

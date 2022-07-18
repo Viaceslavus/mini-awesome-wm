@@ -101,9 +101,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
-math.randomseed(os.time())
-local number = math.random(1, 4)
-theme.wallpaper = "/home/slamko/Downloads/walls/"..number..".png"
+theme.wallpaper = "/home/slamko/pict/world.png"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"

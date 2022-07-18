@@ -11,21 +11,19 @@ local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 
-local debian = require("debian.menu")
 local has_fdo, freedesktop = pcall(require, "freedesktop")
 
 beautiful.init("~/.config/awesome/themes/default/theme.lua")
 
-require("screenshot.screenshot")
 local shutdown = require("shutdown.shutdown")
-shutdown {}
-
 local volume = require("volume.volume")
 local battery = require("battery.battery")
+local screenshot = require("screenshot.screenshot");
 
 local workspaces_count = 5
 local home = os.getenv("HOME")
 
+shutdown { }
 volume { }
 battery {
     not_charging_icon = home.."/.config/awesome/battery/icons/charging.png"
@@ -89,7 +87,6 @@ else
     mymainmenu = awful.menu({
         items = {
                   menu_awesome,
-                  { "Debian", debian.menu.Debian_menu.Debian },
                   menu_terminal,
                 }
     })
@@ -683,7 +680,7 @@ awful.rules.rules = {
         }
     },
 
-    { rule_any = { instance = {vscode}, class = {"Code"} },
+    { rule_any = { instance = {vscode}, class = {"Emacs"} },
       properties = {
             tag = "3",
             callback = function ()
@@ -806,5 +803,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 
 -- Autostart applications
-awful.spawn.with_shell("compton")
+awful.spawn.with_shell("picom &")
+awful.spawn.with_shell("nm-applet &")
 awful.spawn.with_shell("xinput set-prop 'FTE1200:00 0B05:0201 Touchpad' 'libinput Tapping Enabled' 1")
